@@ -9,30 +9,26 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/clientes/**
-
         - id: produtos
           uri: http://localhost:8082
           predicates:
             - Path=/produtos/**
-            
 #        - id: swagger-produtos
 #          uri: http://localhost:8082/
 #          predicates:
 #            - Path=/swagger-ui-produtos.html/**
-            
         - id: cargaprodutos
           uri: http://localhost:8083
           predicates:
             - Path=/carga/**
-
         - id: pedidos
           uri: http://localhost:8084
           predicates:
             - Path=/pedidos/**
-        
         - id: logistica
           uri: http://localhost:8085
           predicates:
+            - Path=/buscarenderecos/**
             - Path=/logistica/**
 
 logging:
