@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: clientes
+          uri: http://msclientes:8081
+          predicates:
+            - Path=/clientes/**
+        - id: produtos
+          uri: http://msprodutos:8082
+          predicates:
+            - Path=/produtos/**
+        - id: cargaprodutos
+          uri: http://mscargaprodutos:8083
+          predicates:
+            - Path=/carga/**
+        - id: pedidos
+          uri: http://mspedidos:8084
+          predicates:
+            - Path=/pedidos/**
+        - id: logistica-endereco
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/buscarenderecos/**
+        - id: logistica-processar-pedido
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/logistica/processar/pedido/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
