@@ -40,7 +40,8 @@ spring:
         - id: logistica-atualizarEntrega
           uri: http://localhost:8085
           predicates:
-            - Path=/atualizarEntrega/**
+            - Path=/atualizarEntrega
+            - Method=PUT
         - id: logistica-buscarEntregador
           uri: http://localhost:8085
           predicates:
@@ -49,6 +50,10 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/criarEntregador/**
+        - id: logistica-encerrarEntrega
+          uri: http://localhost:8085
+          predicates:
+            - Path=/encerrarEntrega
 
 logging:
   level:

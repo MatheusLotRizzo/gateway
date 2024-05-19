@@ -49,6 +49,10 @@ spring:
           uri: http://mslogistica:8085
           predicates:
             - Path=/criarEntregador/**
+        - id: logistica-encerrarEntrega
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/encerrarEntrega
 
 logging:
   level:
