@@ -29,6 +29,26 @@ spring:
           uri: http://mslogistica:8085
           predicates:
             - Path=/logistica/processar/pedido/**
+        - id: logistica-buscarEntregasId
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/buscarEntregasId/**
+        - id: logistica-buscarEntregas
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/buscarEntregas/**
+        - id: logistica-atualizarEntrega
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/atualizarEntrega/**
+        - id: logistica-buscarEntregador
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/buscarEntregador/**
+        - id: logistica-criarEntregador
+          uri: http://mslogistica:8085
+          predicates:
+            - Path=/criarEntregador/**
 
 logging:
   level:
