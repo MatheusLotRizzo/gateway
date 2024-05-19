@@ -9,7 +9,6 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.BodyInserters;
 
 import br.com.fiap.gateway.records.ClienteDtoResponse;
-import br.com.fiap.gateway.records.PedidoDtoResponse;
 import br.com.fiap.gateway.records.ProdutoDtoResponse;
 
 @SpringBootTest
@@ -71,19 +70,15 @@ class GatewayApplicationTestsEndToEnd {
 			cliente.estado()
 		);
 
-		PedidoDtoResponse resp = testClient.post().uri("/pedidos")
+		testClient.post().uri("/pedidos")
 			.contentType(MediaType.APPLICATION_JSON)
 			.bodyValue(jsonPedido)
 				.exchange()
-				.expectStatus().isCreated()
-				.expectBody(PedidoDtoResponse.class)
-			.returnResult()
-		.getResponseBody();
+				.expectStatus().isCreated();
 	}
 
 	@Test
 	void testEntregaPedido(){
-		
 		final String json = """
 			{
 				"codigoPedido": 99,
